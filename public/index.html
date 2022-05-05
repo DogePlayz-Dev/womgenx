@@ -21,7 +21,9 @@
                 function go() {
                     var input = document.getElementById('url-target');
                     if (input.value) {
-                        window.location.href = '/main/' + btoa(input.value);
+                        let enc = btoa(input.value)
+                        alert(enc)
+                        window.location.href = '/main/' + enc;
                     } else {
                         alert('Please provide a link. It does not require https://.');
                     }
