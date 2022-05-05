@@ -13,9 +13,9 @@
         return url.toString().slice(0, 7) + url.toString().slice(7).replace(/\/+/g, '/');
     };
 
-    var proxy_dest_split = atob(window.location.pathname.split(/(?=\/)/));
+    var proxy_dest_split = window.location.pathname.split(/(?=\/)/);
     var proxy_prefix = window.location.protocol + "//" + window.location.host;
-    var proxy_path = proxy_dest_split.shift() + "/";
+    var proxy_path = atob(proxy_dest_split.shift()) + "/";
     var dest_fullurl = proxy_dest_split.join("").slice(1);
     var dest_schemeMatch = dest_fullurl.match(/^[^:]*/);
     var dest_scheme = dest_schemeMatch ? dest_schemeMatch[0] : "";
